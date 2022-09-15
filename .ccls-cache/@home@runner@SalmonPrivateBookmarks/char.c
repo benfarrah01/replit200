@@ -18,17 +18,17 @@ void display(char *str, int size){
 void reverse(char **str, int size){
 	char reverse[size];
 	for (int i = size-1; i >= 0; i--){
-		reverse[(size-1)-i] = *(*str+i);
+		reverse[(size-1)-i] = *(*str+i); //str[i] //pointer arithmetic
 	}
-	
+	printf("%s\n", reverse); //reverse
 	*str = reverse;
 }
 
 int main(){
 	char *str = "Hello World!";
-	printf("%s\n", str);
+	printf("%s\n", str); //forward
 	int size = getSize(str);
 	display(str, size);
 	reverse(&str, size);
-	display(str, size);
+	//display(str, size);
 }
